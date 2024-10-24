@@ -1,4 +1,35 @@
 
+// PART_1: STACK OVERFLOW
+
+let counter = 0; 
+
+    function simpleIncrement() {
+        counter++;
+        
+        if (counter < 15000) {
+        // now surrounding the function in a try/ catch block
+        try {
+            simpleIncrement(); // recursive function
+        } catch (error) {
+            console.log("An error occured during recursion: ", error); // logging the error message
+            console.log(counter); // logging the counter variable
+            }
+        }
+
+        return counter;
+    }
+        
+    try {
+        console.log(simpleIncrement());
+    } catch (error) {
+	        console.log("An error occured in the main function: ", error);       
+}
+
+
+
+
+// rough drafts
+
 // global variable
 // let counter = 0; 
 // function simpleIncrement() {
@@ -22,33 +53,3 @@
 // }
 
 // console.log(simpleIncrement());
-
-// PART_1: STACK OVERFLOW
-
-let counter = 0; 
-
-    function simpleIncrement() {
-        counter++;
-        
-     
-    if (counter < 15000) {
-        // now surrounding the function in a try/ catch block
-        try {
-            simpleIncrement(); // recursive function
-        } catch (error) {
-            console.log("An error occured during recursion: ", error); // logging the error message
-            console.log(counter); // logging the counter variable
-            }
-        }
-
-        return counter;
-    }
-        
-    try {
-        console.log(simpleIncrement());
-    } catch (error) {
-	        console.log("An error occured in the main function: ", error);
-           
-}
-
-
